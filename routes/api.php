@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PieceController;
+use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\SpectacleController;
 use App\Http\Controllers\SalleController;
 use Illuminate\Support\Facades\Route;
@@ -16,3 +17,7 @@ Route::middleware('api')->group(function () {
 Route::middleware('api')->group(function () {
     Route::resource('pieces', PieceController::class);
 });
+Route::middleware('api')->group(function () {
+    Route::resource('pizzas', PizzaController::class);
+});
+
