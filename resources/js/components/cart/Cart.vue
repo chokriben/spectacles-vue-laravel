@@ -22,7 +22,7 @@
                 </div>
                 <div class="cart-items">
                     <div
-                        v-for="c of $store.state.Pizzasstore.Cart"
+                        v-for="c of $store.state.Pizzasstore.cart"
                         :key="c.product.id"
                     >
                         <div class="cart-item" key="{cartItem.id}">
@@ -102,7 +102,7 @@ const clearCart = () => {
 const removeFromCart = (item) => {
     store.commit("Pizzasstore/removeFromCart", item);
 };
-const plus = (item) => {Pizzasstore
+const plus = (item) => {
     Produits.value.map((pro) => {
         if (pro.id == item.product.id) {
             if (item.qty < pro.qtestock) {
@@ -111,6 +111,8 @@ const plus = (item) => {Pizzasstore
         }
     });
 };
+
+
 const minus = (item) => {
     if (item.qty < 1) {
         alert("Quantité stock non valable");
