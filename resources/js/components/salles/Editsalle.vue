@@ -33,7 +33,7 @@ const id = route.params.id; // Accédez aux paramètres de la route via route.pa
 onMounted(async () => {
     try {
         const response = await axios.get(`http://localhost:8000/api/salles/${id}`);
-        salle.value = response.data;
+        salle.value = response.data.data;
     } catch (error) {
         console.error(error);
     }
